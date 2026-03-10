@@ -20,12 +20,8 @@ export function Header() {
 
       {/* Desktop nav */}
       <nav className="hidden items-center gap-5 text-xs font-medium text-sky-100/80 sm:flex">
-        <Link
-          href="/"
-          aria-label="Home"
-          className="flex h-8 w-8 items-center justify-center rounded-full border border-sky-300/40 bg-sky-300/10 text-sky-100 hover:bg-sky-300/20"
-        >
-          <span className="text-lg leading-none">⌂</span>
+        <Link href="/" aria-label="Home" className="hover:text-sky-200">
+          Home
         </Link>
         <Link href="/services" className="hover:text-sky-200">
           Services
