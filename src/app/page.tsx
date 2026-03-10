@@ -1,17 +1,22 @@
 import Link from "next/link";
+import { Logo } from "@/components/Logo";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-900 via-slate-950 to-slate-900 text-white">
-      <div className="mx-auto flex min-h-screen max-w-6xl flex-col px-4 py-8 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gradient-to-br from-sky-800 via-slate-950 to-slate-950 text-white">
+      <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col px-4 py-8 sm:px-6 lg:px-8">
         <header className="flex items-center justify-between pb-8">
-          <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-lg bg-sky-400/80 shadow-lg shadow-sky-500/40" />
-            <div className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-200">
-              Misted Double Glazing
-            </div>
-          </div>
+          <Link href="/" aria-label="Misted Double Glazing" className="flex items-center">
+            <Logo />
+          </Link>
           <nav className="hidden items-center gap-5 text-xs font-medium text-sky-100/80 sm:flex">
+            <Link
+              href="/"
+              aria-label="Home"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-sky-300/40 bg-sky-300/10 text-sky-100 hover:bg-sky-300/20"
+            >
+              <span className="text-lg leading-none">⌂</span>
+            </Link>
             <Link href="/services" className="hover:text-sky-200">
               Services
             </Link>
@@ -20,7 +25,7 @@ export default function Home() {
             </Link>
             <a
               href="#enquiry"
-              className="rounded-full bg-sky-400 px-5 py-2 text-xs font-semibold text-slate-950 shadow-lg shadow-sky-500/40 transition hover:bg-sky-300"
+              className="rounded-full bg-sky-400 px-5 py-2 text-xs font-semibold text-slate-950 transition hover:bg-sky-300"
             >
               Get a repair quote
             </a>
@@ -47,7 +52,7 @@ export default function Home() {
               . Fast, friendly local technicians and tidy workmanship.
             </p>
 
-            <div className="max-w-xl rounded-3xl border border-white/20 bg-white/10 p-5 shadow-xl shadow-sky-900/40 backdrop-blur-xl">
+            <div className="max-w-xl rounded-3xl border border-white/20 bg-white/10 p-5 backdrop-blur-xl">
               <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-sky-100/80">
                 Get your free repair quote
               </p>
@@ -62,6 +67,16 @@ export default function Home() {
                   <input
                     type="text"
                     placeholder="Jane Smith"
+                    className="w-full rounded-xl border border-white/20 bg-slate-950/40 px-3 py-2 text-sm text-sky-50 placeholder:text-slate-400 outline-none transition focus:border-sky-300/80"
+                  />
+                </div>
+                <div className="sm:col-span-1">
+                  <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-sky-100/80">
+                    Phone
+                  </label>
+                  <input
+                    type="tel"
+                    placeholder="07123 456789"
                     className="w-full rounded-xl border border-white/20 bg-slate-950/40 px-3 py-2 text-sm text-sky-50 placeholder:text-slate-400 outline-none transition focus:border-sky-300/80"
                   />
                 </div>
@@ -87,7 +102,7 @@ export default function Home() {
                 </div>
                 <button
                   type="button"
-                  className="mt-1 inline-flex items-center justify-center rounded-full bg-sky-400 px-5 py-2.5 text-sm font-semibold text-slate-950 shadow-lg shadow-sky-500/50 transition hover:bg-sky-300 sm:col-span-2"
+                  className="mt-1 inline-flex items-center justify-center rounded-full bg-sky-400 px-5 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-sky-300 sm:col-span-2"
                 >
                   Request my repair quote
                 </button>
@@ -113,12 +128,14 @@ export default function Home() {
             </div>
           </section>
 
-          <aside className="space-y-4">
-            <div className="rounded-3xl border border-sky-200/30 bg-sky-100/15 p-4 text-slate-950 shadow-xl shadow-sky-900/40 backdrop-blur-2xl">
-              <p className="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-sky-900/80">
+          <aside className="relative mt-6 space-y-4 lg:mt-10">
+            <div className="pointer-events-none absolute -inset-x-6 top-0 -z-10 hidden h-[280px] rounded-3xl border border-sky-300/50 bg-sky-200/20 backdrop-blur-3xl sm:block" />
+            <div className="pointer-events-none absolute right-4 top-14 -z-10 hidden h-52 w-44 rounded-3xl border border-sky-200/40 bg-sky-100/20 backdrop-blur-3xl sm:block" />
+            <div className="rounded-3xl border border-white/15 bg-white p-4 text-slate-950 shadow-xl shadow-sky-900/40">
+              <p className="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-slate-900">
                 Why repair?
               </p>
-              <p className="text-sm text-sky-950/90">
+              <p className="text-sm text-slate-800">
                 Misted units don&apos;t always need full frame replacement. We usually just replace the failed glass unit, keeping your existing frames and hardware.
               </p>
             </div>

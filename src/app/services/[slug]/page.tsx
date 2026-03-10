@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getServiceBySlug, services, type ServiceSlug } from "@/data/services";
+import { Logo } from "@/components/Logo";
 
 type Params = {
   slug: ServiceSlug;
@@ -10,8 +11,13 @@ export function generateStaticParams() {
   return services.map((service) => ({ slug: service.slug }));
 }
 
-export function generateMetadata({ params }: { params: Params }): Metadata {
-  const service = getServiceBySlug(params.slug);
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<Params>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
 
   if (!service) {
     return {
@@ -34,8 +40,13 @@ export function generateMetadata({ params }: { params: Params }): Metadata {
   };
 }
 
-export default function ServicePage({ params }: { params: Params }) {
-  const service = getServiceBySlug(params.slug);
+export default async function ServicePage({
+  params,
+}: {
+  params: Promise<Params>;
+}) {
+  const { slug } = await params;
+  const service = getServiceBySlug(slug);
 
   if (!service) {
     return (
@@ -56,8 +67,37 @@ export default function ServicePage({ params }: { params: Params }) {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 text-white">
-      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
-        <nav className="mb-6 text-xs text-sky-100/70">
+      <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+        <header className="mb-6 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Link href="/" aria-label="Misted Double Glazing" className="flex items-center">
+              <Logo />
+            </Link>
+          </div>
+          <nav className="hidden items-center gap-5 text-xs font-medium text-sky-100/80 sm:flex">
+            <Link
+              href="/"
+              aria-label="Home"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-sky-300/40 bg-sky-300/10 text-sky-100 hover:bg-sky-300/20"
+            >
+              <span className="text-lg leading-none">⌂</span>
+            </Link>
+            <Link href="/services" className="hover:text-sky-200">
+              Services
+            </Link>
+            <Link href="/locations" className="hover:text-sky-200">
+              Locations
+            </Link>
+            <Link
+              href="/#enquiry"
+              className="rounded-full bg-sky-400 px-5 py-2 text-xs font-semibold text-slate-950 transition hover:bg-sky-300"
+            >
+              Get a repair quote
+            </Link>
+          </nav>
+        </header>
+
+        <nav className="mb-4 text-xs text-sky-100/70">
           <Link href="/" className="hover:text-sky-200">
             Home
           </Link>{" "}
@@ -118,7 +158,7 @@ export default function ServicePage({ params }: { params: Params }) {
               </p>
               <Link
                 href="/#enquiry"
-                className="mt-3 inline-flex rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold text-slate-950 shadow-lg shadow-sky-500/50 transition hover:bg-sky-400"
+                className="mt-3 inline-flex rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold text-slate-950 transition hover:bg-sky-400"
               >
                 Request a repair quote
               </Link>

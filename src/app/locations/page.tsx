@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { locations } from "@/data/locations";
+import { Logo } from "@/components/Logo";
 
 export const metadata: Metadata = {
   title: "Areas we cover | Misted Double Glazing",
@@ -11,8 +12,37 @@ export const metadata: Metadata = {
 export default function LocationsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 text-white">
-      <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6 lg:px-8">
-        <header className="mb-8">
+      <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+        <header className="mb-10 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <Link href="/" aria-label="Misted Double Glazing" className="flex items-center">
+              <Logo />
+            </Link>
+          </div>
+          <nav className="hidden items-center gap-5 text-xs font-medium text-sky-100/80 sm:flex">
+            <Link
+              href="/"
+              aria-label="Home"
+              className="flex h-8 w-8 items-center justify-center rounded-full border border-sky-300/40 bg-sky-300/10 text-sky-100 hover:bg-sky-300/20"
+            >
+              <span className="text-lg leading-none">⌂</span>
+            </Link>
+            <Link href="/services" className="hover:text-sky-200">
+              Services
+            </Link>
+            <Link href="/locations" className="hover:text-sky-200">
+              Locations
+            </Link>
+            <Link
+              href="/#enquiry"
+              className="rounded-full bg-sky-400 px-5 py-2 text-xs font-semibold text-slate-950 transition hover:bg-sky-300"
+            >
+              Get a repair quote
+            </Link>
+          </nav>
+        </header>
+
+        <section className="mb-8">
           <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300/80">
             Locations
           </p>
@@ -24,7 +54,7 @@ export default function LocationsPage() {
             repair technicians. These are some of the key cities and regions we
             currently focus on.
           </p>
-        </header>
+        </section>
 
         <div className="grid gap-6 md:grid-cols-2">
           {locations.map((location) => (
