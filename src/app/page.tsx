@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-900 via-slate-950 to-slate-900 text-white">
@@ -9,12 +11,20 @@ export default function Home() {
               Misted Double Glazing
             </div>
           </div>
-          <a
-            href="#enquiry"
-            className="hidden rounded-full bg-sky-400 px-5 py-2 text-sm font-semibold text-slate-950 shadow-lg shadow-sky-500/40 transition hover:bg-sky-300 sm:inline-flex"
-          >
-            Get a repair quote
-          </a>
+          <nav className="hidden items-center gap-5 text-xs font-medium text-sky-100/80 sm:flex">
+            <Link href="/services" className="hover:text-sky-200">
+              Services
+            </Link>
+            <Link href="/locations" className="hover:text-sky-200">
+              Locations
+            </Link>
+            <a
+              href="#enquiry"
+              className="rounded-full bg-sky-400 px-5 py-2 text-xs font-semibold text-slate-950 shadow-lg shadow-sky-500/40 transition hover:bg-sky-300"
+            >
+              Get a repair quote
+            </a>
+          </nav>
         </header>
 
         <main className="grid flex-1 items-center gap-10 pb-10 pt-4 lg:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">

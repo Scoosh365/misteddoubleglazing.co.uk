@@ -1,0 +1,192 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import {
+  getLocationBySlug,
+  locations,
+  type LocationSlug,
+} from "@/data/locations";
+
+type Params = {
+  slug: LocationSlug;
+};
+
+export function generateStaticParams() {
+  return locations.map((location) => ({ slug: location.slug }));
+}
+
+export function generateMetadata({ params }: { params: Params }): Metadata {
+  const location = getLocationBySlug(params.slug);
+
+  if (!location) {
+    return {
+      title: "Location not found | Misted Double Glazing",
+    };
+  }
+
+  const { city, weatherContext, subAreas, postcodeAreas, region } = location;
+  const humanSubAreas = subAreas.join(" & ");
+  const humanPostcodes = postcodeAreas.join(", ");
+
+  const title = `Misted double glazing repairs in ${city} | Misted Double Glazing`;
+  const description = `Misted window repairs in ${city}. ${weatherContext} Fast local service in ${humanSubAreas} and ${humanPostcodes} postcodes.`;
+
+  return {
+    title,
+    description,
+    openGraph: {
+      title,
+      description,
+      url: `/locations/${location.slug}`,
+      type: "article",
+    },
+  };
+}
+
+export default function LocationPage({ params }: { params: Params }) {
+  const location = getLocationBySlug(params.slug);
+
+  if (!location) {
+    return (
+      <div className="min-h-screen bg-slate-950 text-white">
+        <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+          <h1 className="text-2xl font-semibold">Location not found</h1>
+          <p className="mt-3 text-sm text-sky-100/80">
+            The location you&apos;re looking for doesn&apos;t exist.{" "}
+            <Link href="/locations" className="text-sky-300 underline">
+              View all locations
+            </Link>
+            .
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  const { city, region, weatherContext, subAreas, postcodeAreas, toneSnippet } =
+    location;
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `Misted double glazing repairs in ${city}`,
+    areaServed: {
+      "@type": "City",
+      name: city,
+      address: {
+        "@type": "PostalAddress",
+        addressRegion: region,
+      },
+    },
+    serviceType: "Double glazing repair",
+    description: `${weatherContext} Fast local misted double glazing repairs in ${city} and surrounding areas.`,
+    url: `https://misteddoubleglazing.co.uk/locations/${location.slug}`,
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 text-white">
+      <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+
+        <nav className="mb-6 text-xs text-sky-100/70">
+          <Link href="/" className="hover:text-sky-200">
+            Home
+          </Link>{" "}
+          /{" "}
+          <Link href="/locations" className="hover:text-sky-200">
+            Locations
+          </Link>{" "}
+          /{" "}
+          <span className="text-sky-200">Misted double glazing in {city}</span>
+        </nav>
+
+        <header className="mb-8 space-y-3">
+          <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300/80">
+            {region}
+          </p>
+          <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            Misted double glazing repairs in {city}
+          </h1>
+          <p className="max-w-2xl text-sm text-sky-100/80 sm:text-base">
+            {weatherContext} {toneSnippet}
+          </p>
+          <p className="max-w-2xl text-sm text-sky-100/80 sm:text-base">
+            We repair foggy, steamed up and blown double glazed units across{" "}
+            {city} and surrounding areas, often{" "}
+            <span className="font-semibold text-sky-100">
+              saving up to 70% vs full frame replacement
+            </span>
+            .
+          </p>
+        </header>
+
+        <section className="grid gap-6 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
+          <div className="space-y-6">
+            <div className="rounded-3xl border border-white/15 bg-slate-950/40 p-5 backdrop-blur-xl">
+              <h2 className="text-sm font-semibold text-sky-100">
+                Local areas we cover
+              </h2>
+              <p className="mt-2 text-sm text-sky-100/80">
+                We regularly work in:
+              </p>
+              <ul className="mt-2 flex flex-wrap gap-2 text-xs text-sky-100/80">
+                {subAreas.map((area) => (
+                  <li
+                    key={area}
+                    className="rounded-full border border-sky-300/40 bg-sky-900/40 px-3 py-1"
+                  >
+                    {area}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-3 text-xs text-sky-100/80">
+                Typical postcode areas: {postcodeAreas.join(", ")}.
+              </p>
+            </div>
+            <div className="rounded-3xl border border-sky-200/15 bg-sky-900/20 p-5 backdrop-blur-xl">
+              <h2 className="text-sm font-semibold text-sky-100">
+                What we can help with
+              </h2>
+              <ul className="mt-3 space-y-2 text-sm text-sky-100/80">
+                <li className="flex gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-emerald-400" />
+                  <span>Misted, foggy or blown double glazed units</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-emerald-400" />
+                  <span>Leaks, draughts or failed seals around the glass</span>
+                </li>
+                <li className="flex gap-2">
+                  <span className="mt-1 h-1.5 w-1.5 flex-none rounded-full bg-emerald-400" />
+                  <span>Stiff, dropped or difficult-to-close windows</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <aside className="space-y-4">
+            <div className="rounded-3xl border border-white/20 bg-white/10 p-4 text-slate-950 shadow-xl shadow-sky-900/40 backdrop-blur-xl">
+              <h2 className="text-sm font-semibold text-slate-950">
+                Get a local repair quote
+              </h2>
+              <p className="mt-2 text-xs text-slate-900/80">
+                Tell us about the windows you need help with in {city} and we&apos;ll
+                connect you with a trusted local technician.
+              </p>
+              <Link
+                href="/#enquiry"
+                className="mt-3 inline-flex rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold text-slate-950 shadow-lg shadow-sky-500/50 transition hover:bg-sky-400"
+              >
+                Request a quote in {city}
+              </Link>
+            </div>
+          </aside>
+        </section>
+      </div>
+    </div>
+  );
+}
+
