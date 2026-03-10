@@ -77,9 +77,6 @@ export default function Logo() {
         <span className="text-xl font-bold tracking-tight text-[#0055A4]">
           misted<span className="text-[#009688]">double</span>glazing
         </span>
-        <span className="mt-0.5 text-[10px] uppercase tracking-[0.65em] text-slate-500 font-medium">
-          National Repair Specialists&nbsp;
-        </span>
       </div>
     </div>
   );
