@@ -10,66 +10,46 @@ export default function Logo() {
         aria-hidden="true"
         focusable="false"
       >
-        {/* Outer window frame */}
+        {/* Simple four-pane window without outer border */}
         <rect
-          x="3"
-          y="3"
-          width="34"
-          height="34"
-          rx="6"
-          fill="#0F172A"
-          stroke="#38BDF8"
-          strokeWidth="2"
-        />
-        {/* Window panes */}
-        <rect
-          x="6.5"
-          y="6.5"
+          x="6"
+          y="6"
           width="12"
           height="12"
+          rx="2"
+          ry="2"
           fill="#0EA5E9"
-          fillOpacity="0.18"
-          stroke="#38BDF8"
-          strokeWidth="1.4"
+          fillOpacity="0.45"
         />
         <rect
-          x="21.5"
-          y="6.5"
+          x="22"
+          y="6"
           width="12"
           height="12"
+          rx="2"
+          ry="2"
           fill="#0EA5E9"
-          fillOpacity="0.12"
-          stroke="#38BDF8"
-          strokeWidth="1.4"
+          fillOpacity="0.3"
         />
         <rect
-          x="6.5"
-          y="21.5"
+          x="6"
+          y="22"
           width="12"
           height="12"
-          fill="#E2E8F0"
-          fillOpacity="0.8"
-          stroke="#CBD5F5"
-          strokeWidth="1.4"
-        />
-        <rect
-          x="21.5"
-          y="21.5"
-          width="12"
-          height="12"
+          rx="2"
+          ry="2"
           fill="#E2E8F0"
           fillOpacity="0.9"
-          stroke="#CBD5F5"
-          strokeWidth="1.4"
         />
-        {/* Simple glass shine */}
-        <line
-          x1="8"
-          y1="9"
-          x2="16"
-          y2="7"
-          stroke="#E0F2FE"
-          strokeWidth="1.2"
+        <rect
+          x="22"
+          y="22"
+          width="12"
+          height="12"
+          rx="2"
+          ry="2"
+          fill="#E2E8F0"
+          fillOpacity="0.8"
         />
       </svg>
 
