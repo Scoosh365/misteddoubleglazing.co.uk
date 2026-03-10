@@ -121,17 +121,17 @@ export default async function ServicePage({
           </div>
 
           <aside className="space-y-4">
-            <div className="rounded-3xl border border-white/20 bg-white/10 p-4 text-slate-950 shadow-xl shadow-sky-900/40 backdrop-blur-xl">
-              <h2 className="text-sm font-semibold text-slate-950">
+            <div className="rounded-3xl border border-white/15 bg-white p-4 text-slate-950 shadow-xl shadow-sky-900/40">
+              <h2 className="text-sm font-semibold text-slate-900">
                 Ready for a quote?
               </h2>
-              <p className="mt-2 text-xs text-slate-900/80">
+              <p className="mt-2 text-xs text-slate-800">
                 Tell us about the windows or doors you need help with and we&apos;ll
                 match your enquiry to a local technician.
               </p>
               <Link
                 href="/#enquiry"
-                className="mt-3 inline-flex rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold text-slate-950 transition hover:bg-sky-400"
+                className="mt-3 inline-flex rounded-full bg-sky-500 px-4 py-2 text-xs font-semibold text-white transition hover:bg-sky-400"
               >
                 Request a repair quote
               </Link>
