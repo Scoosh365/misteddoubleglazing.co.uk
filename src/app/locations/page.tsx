@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function LocationsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 text-white">
-      <div className="mx-auto max-w-5xl px-4 py-8 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <header className="mb-10 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" aria-label="Misted Double Glazing" className="flex items-center">

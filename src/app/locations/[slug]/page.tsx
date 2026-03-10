@@ -73,8 +73,17 @@ export default async function LocationPage({
     );
   }
 
-  const { city, region, weatherContext, subAreas, postcodeAreas, toneSnippet } =
-    location;
+  const {
+    city,
+    region,
+    weatherContext,
+    subAreas,
+    postcodeAreas,
+    toneSnippet,
+    intro,
+    neighbourhoodsBlurb,
+    faqs,
+  } = location;
 
   const schema = {
     "@context": "https://schema.org",
@@ -95,7 +104,7 @@ export default async function LocationPage({
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 text-white">
-      <div className="mx-auto max-w-4xl px-4 py-8 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <script
           type="application/ld+json"
           suppressHydrationWarning
@@ -154,17 +163,21 @@ export default async function LocationPage({
             {weatherContext} {toneSnippet}
           </p>
           <p className="max-w-2xl text-sm text-sky-100/80 sm:text-base">
-            We repair foggy, steamed up and blown double glazed units across{" "}
-            {city} and surrounding areas, often{" "}
-            <span className="font-semibold text-sky-100">
-              saving up to 70% vs full frame replacement
-            </span>
-            .
+            {intro}
           </p>
         </header>
 
         <section className="grid gap-6 md:grid-cols-[minmax(0,1.4fr)_minmax(0,1fr)]">
           <div className="space-y-6">
+            <div className="rounded-3xl border border-white/15 bg-slate-950/40 p-5 backdrop-blur-xl">
+              <h2 className="text-sm font-semibold text-sky-100">
+                Homes and areas we work in
+              </h2>
+              <p className="mt-2 text-sm text-sky-100/80">
+                {neighbourhoodsBlurb}
+              </p>
+            </div>
+
             <div className="rounded-3xl border border-white/15 bg-slate-950/40 p-5 backdrop-blur-xl">
               <h2 className="text-sm font-semibold text-sky-100">
                 Local areas we cover
@@ -205,6 +218,22 @@ export default async function LocationPage({
                 </li>
               </ul>
             </div>
+
+            {faqs && faqs.length > 0 && (
+              <div className="rounded-3xl border border-sky-200/15 bg-sky-900/20 p-5 backdrop-blur-xl">
+                <h2 className="text-sm font-semibold text-sky-100">
+                  Common questions in {city}
+                </h2>
+                <dl className="mt-3 space-y-3 text-sm text-sky-100/80">
+                  {faqs.map((faq) => (
+                    <div key={faq.question}>
+                      <dt className="font-semibold">{faq.question}</dt>
+                      <dd className="mt-1 text-sky-100/80">{faq.answer}</dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            )}
           </div>
 
           <aside className="space-y-4">
@@ -222,6 +251,21 @@ export default async function LocationPage({
               >
                 Request a quote in {city}
               </Link>
+            </div>
+
+            <div className="overflow-hidden rounded-3xl border border-white/10 bg-slate-950/60">
+              <div className="border-b border-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-sky-300/80">
+                Service area map
+              </div>
+              <iframe
+                title={`Service area map for ${city}`}
+                src={`https://www.google.com/maps?q=${encodeURIComponent(
+                  `${city} UK`,
+                )}&output=embed`}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-64 w-full border-0"
+              />
             </div>
           </aside>
         </section>
