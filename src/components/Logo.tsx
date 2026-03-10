@@ -74,8 +74,8 @@ export default function Logo() {
       </svg>
 
       <div className="flex flex-col leading-none">
-        <span className="text-xl font-bold tracking-tight text-[#0055A4]">
-          misted<span className="text-[#009688]">double</span>glazing
+        <span className="text-xl font-bold tracking-tight text-[#38BDF8]">
+          misted<span className="text-[#22C55E]">double</span>glazing
         </span>
       </div>
     </div>
