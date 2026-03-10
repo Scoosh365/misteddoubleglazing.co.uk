@@ -39,14 +39,12 @@ export default function RootLayout({
       >
         {children}
         <footer className="border-t border-white/10 bg-black/80 px-4 py-4 text-center text-xs text-zinc-400">
-          <div className="space-x-4">
-            <span>
-              © {new Date().getFullYear()} misteddoubleglazing.co.uk
-            </span>
-            <a
-              href="/site-map"
-              className="text-sky-300 hover:text-sky-200"
-            >
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            <span>© {new Date().getFullYear()} misteddoubleglazing.co.uk</span>
+            <a href="/terms" className="text-sky-300 hover:text-sky-200">
+              Terms &amp; conditions
+            </a>
+            <a href="/site-map" className="text-sky-300 hover:text-sky-200">
               HTML sitemap
             </a>
           </div>
