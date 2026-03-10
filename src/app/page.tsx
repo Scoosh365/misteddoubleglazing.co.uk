@@ -1,36 +1,10 @@
-import Link from "next/link";
-import { Logo } from "@/components/Logo";
+import { Header } from "@/components/Header";
 
 export default function Home() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-sky-800 via-slate-950 to-slate-950 text-white">
       <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col px-4 py-8 sm:px-6 lg:px-8">
-        <header className="flex items-center justify-between pb-8">
-          <Link href="/" aria-label="Misted Double Glazing" className="flex items-center">
-            <Logo />
-          </Link>
-          <nav className="hidden items-center gap-5 text-xs font-medium text-sky-100/80 sm:flex">
-            <Link
-              href="/"
-              aria-label="Home"
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-sky-300/40 bg-sky-300/10 text-sky-100 hover:bg-sky-300/20"
-            >
-              <span className="text-lg leading-none">⌂</span>
-            </Link>
-            <Link href="/services" className="hover:text-sky-200">
-              Services
-            </Link>
-            <Link href="/locations" className="hover:text-sky-200">
-              Locations
-            </Link>
-            <a
-              href="#enquiry"
-              className="rounded-full bg-sky-400 px-5 py-2 text-xs font-semibold text-slate-950 transition hover:bg-sky-300"
-            >
-              Get a repair quote
-            </a>
-          </nav>
-        </header>
+        <Header />
 
         <main className="flex flex-1 flex-col gap-10 pb-10 pt-4">
           <section className="space-y-8 lg:max-w-3xl">

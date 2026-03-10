@@ -5,7 +5,7 @@ import {
   locations,
   type LocationSlug,
 } from "@/data/locations";
-import { Logo } from "@/components/Logo";
+import { Header } from "@/components/Header";
 
 type Params = {
   slug: LocationSlug;
@@ -111,34 +111,7 @@ export default async function LocationPage({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
 
-        <header className="mb-6 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <Link href="/" aria-label="Misted Double Glazing" className="flex items-center">
-              <Logo />
-            </Link>
-          </div>
-          <nav className="hidden items-center gap-5 text-xs font-medium text-sky-100/80 sm:flex">
-            <Link
-              href="/"
-              aria-label="Home"
-              className="flex h-8 w-8 items-center justify-center rounded-full border border-sky-300/40 bg-sky-300/10 text-sky-100 hover:bg-sky-300/20"
-            >
-              <span className="text-lg leading-none">⌂</span>
-            </Link>
-            <Link href="/services" className="hover:text-sky-200">
-              Services
-            </Link>
-            <Link href="/locations" className="hover:text-sky-200">
-              Locations
-            </Link>
-            <Link
-              href="/#enquiry"
-              className="rounded-full bg-sky-400 px-5 py-2 text-xs font-semibold text-slate-950 transition hover:bg-sky-300"
-            >
-              Get a repair quote
-            </Link>
-          </nav>
-        </header>
+        <Header />
 
         <nav className="mb-4 text-xs text-sky-100/70">
           <Link href="/" className="hover:text-sky-200">
