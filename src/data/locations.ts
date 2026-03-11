@@ -5,7 +5,13 @@ export type LocationSlug =
   | "birmingham"
   | "london"
   | "leeds"
-  | "newcastle";
+  | "newcastle"
+  | "bristol"
+  | "stirling"
+  | "falkirk"
+  | "alloa"
+  | "dunfermline"
+  | "perth";
 
 export interface Location {
   slug: LocationSlug;
@@ -165,6 +171,131 @@ export const locations: Location[] = [
     subAreas: ["Jesmond", "Gosforth"],
     postcodeAreas: ["NE1", "NE2", "NE3"],
     toneSnippet: "From city flats to family semis across the Tyne.",
+  },
+  {
+    slug: "bristol",
+    city: "Bristol",
+    region: "South West",
+    weatherContext:
+      "Harbour air, traffic and mixed weather can all shorten the life of older seals.",
+    intro:
+      "From coloured terraces in Totterdown to harbourside apartments, failed double glazed units are common around Bristol’s hills and busy roads.",
+    neighbourhoodsBlurb:
+      "We regularly help homeowners in areas like Clifton and Bishopston clear misted panes, cut down on draughts and improve street-noise insulation.",
+    faqs: [
+      {
+        question: "Do you work on Victorian terraces on steep streets?",
+        answer:
+          "Yes, we’re used to working on stepped terraces and tighter Bristol streets. Let us know about parking, access and floor level when you request a quote.",
+      },
+    ],
+    subAreas: ["Clifton", "Bishopston"],
+    postcodeAreas: ["BS1", "BS3", "BS7", "BS8"],
+    toneSnippet: "Perfect for colourful terraces and city apartments.",
+  },
+  {
+    slug: "stirling",
+    city: "Stirling",
+    region: "Central Scotland",
+    weatherContext: "Changeable Central Belt weather can be hard on older timber and seals.",
+    intro:
+      "Stirling’s mix of older stone homes and newer estates means misted units can appear anywhere from town centre streets to modern cul‑de‑sacs.",
+    neighbourhoodsBlurb:
+      "We’re often in areas around the city centre and Bridge of Allan replacing failed units while keeping existing frames wherever possible.",
+    faqs: [
+      {
+        question: "Can you match existing styles in older stone properties?",
+        answer:
+          "In most cases, yes. We’ll measure each opening, discuss your existing glass and quote to replace just the failed units while keeping the look of the property.",
+      },
+    ],
+    subAreas: ["City Centre", "Bridge of Allan"],
+    postcodeAreas: ["FK7", "FK8", "FK9"],
+    toneSnippet: "Ideal for older stone homes and newer estates around the Ochils.",
+  },
+  {
+    slug: "falkirk",
+    city: "Falkirk",
+    region: "Central Scotland",
+    weatherContext:
+      "Wind, rain and exposure between Edinburgh and Glasgow can take their toll on seals.",
+    intro:
+      "Falkirk’s estates, new-build developments and older streets all see misted and blown units as seals fail over time.",
+    neighbourhoodsBlurb:
+      "We help households around Camelon, Larbert and surrounding FK postcodes replace failed glass units without unnecessary frame replacement.",
+    faqs: [
+      {
+        question: "Do you cover both older estates and new-build developments?",
+        answer:
+          "Yes, we regularly work across Falkirk’s older schemes and newer developments, measuring each unit and supplying like‑for‑like replacements where possible.",
+      },
+    ],
+    subAreas: ["Camelon", "Larbert"],
+    postcodeAreas: ["FK1", "FK2", "FK5"],
+    toneSnippet: "From established estates to newer developments around the Kelpies.",
+  },
+  {
+    slug: "alloa",
+    city: "Alloa",
+    region: "Clackmannanshire",
+    weatherContext:
+      "Firth of Forth air and exposed positions can push moisture into older double glazing.",
+    intro:
+      "In Alloa and the Wee County, older frames and seals often show up as fogged or misted panes rather than clear glass.",
+    neighbourhoodsBlurb:
+      "We regularly work in Alloa and nearby towns across Clackmannanshire, replacing failed units and improving comfort without pushing full window replacement.",
+    faqs: [
+      {
+        question: "Can you work in smaller flats and bungalows?",
+        answer:
+          "Yes, we help with everything from small ground‑floor flats to bungalows and family homes. Let us know access and parking details when you enquire.",
+      },
+    ],
+    subAreas: ["Alloa Town", "Clackmannan"],
+    postcodeAreas: ["FK10", "FK11"],
+    toneSnippet: "Ideal for Wee County flats, bungalows and family homes.",
+  },
+  {
+    slug: "dunfermline",
+    city: "Dunfermline",
+    region: "Fife",
+    weatherContext:
+      "Coastal winds and showers across Fife can accelerate wear on older units.",
+    intro:
+      "Dunfermline’s mix of newer developments and older streets means misted double glazing is a common call‑out across the town.",
+    neighbourhoodsBlurb:
+      "We frequently visit areas like Duloch and the town centre suburbs, replacing failed glass units and improving draughty windows.",
+    faqs: [
+      {
+        question: "Do you work in newer developments around Duloch?",
+        answer:
+          "Yes, we regularly replace failed units in modern estates around Duloch and eastern Dunfermline, matching existing specifications wherever possible.",
+      },
+    ],
+    subAreas: ["Duloch", "Town Centre Suburbs"],
+    postcodeAreas: ["KY11", "KY12"],
+    toneSnippet: "From town centre streets to newer estates across Fife.",
+  },
+  {
+    slug: "perth",
+    city: "Perth",
+    region: "Perthshire",
+    weatherContext:
+      "Cooler Perthshire winters and river air can expose weak points in older glazing.",
+    intro:
+      "From traditional stone homes near the Tay to newer housing on the edge of town, misted and fogged units are a common sight around Perth.",
+    neighbourhoodsBlurb:
+      "We often help homeowners in the city centre and Scone areas restore clear views and better insulation without replacing whole frames.",
+    faqs: [
+      {
+        question: "Can you work on upper floors in traditional townhouses?",
+        answer:
+          "Yes, we regularly work in multi‑storey homes and flats around Perth. Share floor level and access details so we can plan the visit safely.",
+      },
+    ],
+    subAreas: ["City Centre", "Scone"],
+    postcodeAreas: ["PH1", "PH2"],
+    toneSnippet: "Ideal for Perthshire townhouses and newer family homes.",
   },
 ];
 

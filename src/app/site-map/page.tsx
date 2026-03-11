@@ -3,7 +3,7 @@ import { services } from "@/data/services";
 import { locations } from "@/data/locations";
 
 export const metadata = {
-  title: "HTML sitemap | Misted Double Glazing",
+  title: "Sitemap | Misted Double Glazing",
   description:
     "Browse all key pages, services and locations for misteddoubleglazing.co.uk.",
 };
@@ -14,7 +14,7 @@ export default function HtmlSitemapPage() {
       <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <header className="mb-8">
           <h1 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
-            HTML sitemap
+            Sitemap
           </h1>
           <p className="mt-3 max-w-2xl text-sm text-slate-700 sm:text-base">
             Quick overview of the main pages on misteddoubleglazing.co.uk.
