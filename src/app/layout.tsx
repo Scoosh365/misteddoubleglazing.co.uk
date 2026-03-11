@@ -40,6 +40,7 @@ export default function RootLayout({
     "@type": "Organization",
     name: "Misted Double Glazing",
     url: "https://misteddoubleglazing.co.uk",
+    telephone: "+44 7712 677 697",
     address: {
       "@type": "PostalAddress",
       streetAddress: "Alloa Business Centre, Whins Road",
@@ -86,6 +87,13 @@ export default function RootLayout({
               Alloa Business Centre, Whins Road, Alloa, Clackmannanshire FK10
               3SA
             </span>
+            <a
+              href="tel:+447712677697"
+              className="text-slate-600 hover:text-sky-700"
+            >
+              <span className="hidden sm:inline">Call our team</span>
+              <span className="inline sm:hidden">Call 07712 677 697</span>
+            </a>
             <a href="/terms" className="text-sky-300 hover:text-sky-200">
               Terms &amp; conditions
             </a>

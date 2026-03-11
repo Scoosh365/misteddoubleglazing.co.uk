@@ -151,8 +151,15 @@ export default function WindowRepairsNearMePage() {
               >
                 homepage
               </a>
-              . We&apos;ll then match your enquiry to a suitable local technician and
-              arrange the next steps.
+              , or{" "}
+              <a
+                href="tel:+447712677697"
+                className="font-semibold text-sky-700 hover:text-sky-800"
+              >
+                call our team on 07712 677 697
+              </a>
+              . We&apos;ll then match your enquiry to a suitable local technician
+              and arrange the next steps.
             </p>
           </section>
         </main>
