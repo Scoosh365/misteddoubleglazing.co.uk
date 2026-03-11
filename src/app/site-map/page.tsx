@@ -36,6 +36,14 @@ export default function HtmlSitemapPage() {
             </h2>
             <ul className="space-y-1 text-sm text-slate-700">
               <li>
+                <Link
+                  href="/why-does-double-glazing-mist-or-steam-up"
+                  className="hover:text-sky-700"
+                >
+                  Why does double glazing mist or steam up?
+                </Link>
+              </li>
+              <li>
                 <Link href="/faq" className="hover:text-sky-700">
                   FAQs
                 </Link>

@@ -228,7 +228,7 @@ export default async function LocationPage({
 
             <div className="overflow-hidden rounded-3xl border border-slate-200 bg-white">
               <div className="border-b border-slate-200 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-slate-600">
-                Service area map
+                Service area map for {city}
               </div>
               <iframe
                 title={`Service area map for ${city}`}
