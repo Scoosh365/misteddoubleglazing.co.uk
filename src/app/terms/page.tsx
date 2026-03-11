@@ -9,27 +9,27 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-950 to-slate-900 text-white">
+    <div className="min-h-screen bg-gradient-to-b from-sky-50 via-slate-50 to-slate-100 text-slate-900">
       <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <Header />
 
         <main className="pb-12 pt-4">
           <header className="mb-6 space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-300/80">
+            <p className="text-xs font-semibold uppercase tracking-[0.22em] text-sky-600">
               Terms
             </p>
-            <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h1 className="text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl">
               Terms and conditions
             </h1>
-            <p className="max-w-2xl text-sm text-sky-100/80 sm:text-base">
+            <p className="max-w-2xl text-sm text-slate-700 sm:text-base">
               Please read these terms carefully before using this website or
               submitting an enquiry. By using the site you agree to these terms.
             </p>
           </header>
 
-          <div className="space-y-6 text-sm text-sky-100/80 sm:text-base">
+          <div className="space-y-6 text-sm text-slate-700 sm:text-base">
             <section>
-              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300/80">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">
                 1. About this website
               </h2>
               <p className="mt-2">
@@ -41,7 +41,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300/80">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">
                 2. Enquiries and quotations
               </h2>
               <p className="mt-2">
@@ -60,7 +60,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300/80">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">
                 3. Repairs, guarantees and limitations
               </h2>
               <p className="mt-2">
@@ -79,7 +79,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300/80">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">
                 4. Payments and cancellations
               </h2>
               <p className="mt-2">
@@ -93,7 +93,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300/80">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">
                 5. Use of this site
               </h2>
               <p className="mt-2">
@@ -105,7 +105,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300/80">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">
                 6. Liability
               </h2>
               <p className="mt-2">
@@ -119,7 +119,7 @@ export default function TermsPage() {
             </section>
 
             <section>
-              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300/80">
+              <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-sky-700">
                 7. Privacy
               </h2>
               <p className="mt-2">

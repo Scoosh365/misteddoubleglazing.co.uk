@@ -106,33 +106,33 @@ export default function Home() {
             </div>
 
             <aside className="relative space-y-4">
-              <div className="pointer-events-none absolute -inset-x-6 top-0 -z-10 hidden h-[280px] rounded-3xl border border-sky-300/50 bg-sky-200/20 backdrop-blur-3xl sm:block" />
-              <div className="pointer-events-none absolute right-4 top-14 -z-10 hidden h-52 w-44 rounded-3xl border border-sky-200/40 bg-sky-100/20 backdrop-blur-3xl sm:block" />
-              <div className="rounded-3xl border border-white/15 bg-white p-4 text-slate-950 shadow-xl shadow-sky-900/40">
-                <p className="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-slate-900">
+              <div className="pointer-events-none absolute -inset-x-6 top-0 -z-10 hidden h-[280px] rounded-3xl bg-sky-100/40 sm:block" />
+              <div className="pointer-events-none absolute right-4 top-14 -z-10 hidden h-52 w-44 rounded-3xl bg-sky-50 sm:block" />
+              <div className="rounded-3xl border border-slate-200 bg-white p-4 text-slate-950 shadow-sm">
+                <p className="mb-1 text-xs font-semibold uppercase tracking-[0.22em] text-slate-700">
                   Why repair?
                 </p>
-                <p className="text-sm text-slate-800">
+                <p className="text-sm text-slate-700">
                   Misted units don&apos;t always need full frame replacement. We usually just replace the failed glass unit, keeping your existing frames and hardware.
                 </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
-                <div className="rounded-2xl border border-white/20 bg-white/8 p-3 text-xs text-sky-50 backdrop-blur-xl">
+                <div className="rounded-2xl border border-slate-200 bg-white p-3 text-xs text-slate-800">
                   <div className="mb-1 font-semibold">Misted &amp; blown units</div>
-                  <p className="text-[11px] text-sky-100/80">
+                  <p className="text-[11px] text-slate-600">
                     Steamed up between the panes? We replace the sealed unit to restore a clear view.
                   </p>
                 </div>
-                <div className="rounded-2xl border border-white/20 bg-white/8 p-3 text-xs text-sky-50 backdrop-blur-xl">
+                <div className="rounded-2xl border border-slate-200 bg-white p-3 text-xs text-slate-800">
                   <div className="mb-1 font-semibold">Locks, handles &amp; hinges</div>
-                  <p className="text-[11px] text-sky-100/80">
+                  <p className="text-[11px] text-slate-600">
                     Stiff or failed hardware? We realign and replace where needed so windows open safely again.
                   </p>
                 </div>
               </div>
-              <div className="rounded-2xl border border-emerald-300/40 bg-emerald-100/10 p-3 text-xs text-emerald-50 backdrop-blur-xl">
+              <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-3 text-xs text-emerald-900">
                 <div className="mb-1 font-semibold">Nationwide coverage</div>
-                <p className="text-[11px] text-emerald-50/80">
+                <p className="text-[11px] text-emerald-700">
                   Local partners across the UK. We match your enquiry to a vetted technician in your area.
                 </p>
               </div>
