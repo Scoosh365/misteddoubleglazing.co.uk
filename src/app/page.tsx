@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { EnquiryForm } from "@/components/EnquiryForm";
 
 export default function Home() {
   return (
@@ -33,57 +34,7 @@ export default function Home() {
                 <p className="mb-4 text-sm font-medium uppercase tracking-[0.22em] text-slate-600">
                   Get your free repair quote
                 </p>
-                <form
-                  id="enquiry"
-                  className="grid gap-3 sm:grid-cols-2"
-                >
-                  <div className="sm:col-span-1">
-                    <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-700">
-                      Name
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="Jane Smith"
-                      className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-sky-400"
-                    />
-                  </div>
-                  <div className="sm:col-span-1">
-                    <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-700">
-                      Phone
-                    </label>
-                    <input
-                      type="tel"
-                      placeholder="07123 456789"
-                      className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-sky-400"
-                    />
-                  </div>
-                  <div className="sm:col-span-1">
-                    <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-700">
-                      Postcode
-                    </label>
-                    <input
-                      type="text"
-                      placeholder="EH6 5AA"
-                      className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-sky-400"
-                    />
-                  </div>
-                  <div className="sm:col-span-2">
-                    <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-700">
-                      What&apos;s the issue?
-                    </label>
-                    <textarea
-                      rows={3}
-                      placeholder="Tell us about the misted units, sizes, number of windows, floor level, etc."
-                      className="w-full resize-none rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-sky-400"
-                    />
-                  </div>
-                  <button
-                    type="button"
-                    className="mt-1 inline-flex items-center justify-center rounded-full bg-sky-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-700 sm:col-span-2"
-                  >
-                    Request my repair quote
-                  </button>
-                </form>
+                <EnquiryForm />
                 <p className="mt-3 text-[11px] text-slate-500">
                   No spam. We only use your details to contact you about your repair.
                 </p>
