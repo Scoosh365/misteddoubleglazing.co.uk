@@ -3,7 +3,9 @@ export type LocationSlug =
   | "glasgow"
   | "manchester"
   | "birmingham"
-  | "london";
+  | "london"
+  | "leeds"
+  | "newcastle";
 
 export interface Location {
   slug: LocationSlug;
@@ -123,6 +125,46 @@ export const locations: Location[] = [
     subAreas: ["Islington", "Croydon"],
     postcodeAreas: ["N1", "SE1", "SW16", "E14"],
     toneSnippet: "Sash, casement and everything in between.",
+  },
+  {
+    slug: "leeds",
+    city: "Leeds",
+    region: "Yorkshire",
+    weatherContext: "Rain, wind and busy ring roads are hard on older seals.",
+    intro:
+      "From stone terraces to modern city-centre apartments, failed double glazed units are common around Leeds.",
+    neighbourhoodsBlurb:
+      "We’re often in areas like Headingley and Chapel Allerton replacing misted units and improving draughty windows.",
+    faqs: [
+      {
+        question: "Do you repair upstairs windows in terraced streets?",
+        answer:
+          "Yes, we regularly work on first- and second-floor windows in Leeds terraces. Let us know about access, parking and floor level when you enquire.",
+      },
+    ],
+    subAreas: ["Headingley", "Chapel Allerton"],
+    postcodeAreas: ["LS1", "LS6", "LS7"],
+    toneSnippet: "Ideal for terraces, semis and student lets.",
+  },
+  {
+    slug: "newcastle",
+    city: "Newcastle upon Tyne",
+    region: "North East",
+    weatherContext: "North Sea air and driving rain can be tough on seals.",
+    intro:
+      "Newcastle’s mix of Victorian streets, estates and riverside apartments means misted double glazing can crop up in all kinds of homes.",
+    neighbourhoodsBlurb:
+      "We regularly help homeowners around Jesmond, Gosforth and nearby postcodes replace failed units and cut down on draughts and condensation.",
+    faqs: [
+      {
+        question: "Can you work on upper-floor flats with limited parking?",
+        answer:
+          "Yes, we’re used to working in tighter Newcastle streets and apartment blocks. Share as much detail as you can about access, parking and floor level when you request a quote.",
+      },
+    ],
+    subAreas: ["Jesmond", "Gosforth"],
+    postcodeAreas: ["NE1", "NE2", "NE3"],
+    toneSnippet: "From city flats to family semis across the Tyne.",
   },
 ];
 
