@@ -2,7 +2,7 @@ import { Header } from "@/components/Header";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-sky-800 via-slate-950 to-slate-950 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-sky-700 via-slate-900 to-slate-950 text-white/95">
       <div className="relative mx-auto flex min-h-screen max-w-6xl flex-col px-4 py-8 sm:px-6 lg:px-8">
         <Header />
 
