@@ -14,7 +14,8 @@ export type LocationSlug =
   | "perth"
   | "aberdeen"
   | "dundee"
-  | "liverpool";
+  | "liverpool"
+  | "kilmarnock";
 
 export interface Location {
   slug: LocationSlug;
@@ -362,6 +363,27 @@ export const locations: Location[] = [
     subAreas: ["Anfield", "Allerton"],
     postcodeAreas: ["L1", "L4", "L18"],
     toneSnippet: "Perfect for Merseyside terraces, semis and city apartments.",
+  },
+  {
+    slug: "kilmarnock",
+    city: "Kilmarnock",
+    region: "Ayrshire",
+    weatherContext:
+      "Wind, rain and coastal weather across Ayrshire can all put extra pressure on older seals and frames.",
+    intro:
+      "From traditional sandstone streets to newer housing schemes, misted and blown units are a common sight around Kilmarnock.",
+    neighbourhoodsBlurb:
+      "We regularly help homeowners in areas like Bonnyton and New Farm Loch replace failed glass units, improve comfort and cut down on draughts.",
+    faqs: [
+      {
+        question: "Do you cover both older tenements and newer estates in Kilmarnock?",
+        answer:
+          "Yes, we work across central Kilmarnock and surrounding estates, measuring each unit and supplying replacements to suit your existing frames.",
+      },
+    ],
+    subAreas: ["Bonnyton", "New Farm Loch"],
+    postcodeAreas: ["KA1", "KA3"],
+    toneSnippet: "Ideal for Kilmarnock tenements, terraces and newer family homes.",
   },
 ];
 
