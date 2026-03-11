@@ -9,6 +9,14 @@ export const metadata = {
 };
 
 export default function HtmlSitemapPage() {
+  const sortedServices = [...services].sort((a, b) =>
+    a.name.localeCompare(b.name),
+  );
+
+  const sortedLocations = [...locations].sort((a, b) =>
+    a.city.localeCompare(b.city),
+  );
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-50 via-slate-50 to-slate-100 text-slate-900">
       <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
@@ -50,7 +58,7 @@ export default function HtmlSitemapPage() {
               Services
             </h2>
             <ul className="space-y-1 text-sm text-slate-700">
-              {services.map((service) => (
+            {sortedServices.map((service) => (
                 <li key={service.slug}>
                   <Link
                     href={`/services/${service.slug}`}
@@ -68,7 +76,7 @@ export default function HtmlSitemapPage() {
               Locations
             </h2>
             <ul className="space-y-1 text-sm text-slate-700">
-              {locations.map((location) => (
+              {sortedLocations.map((location) => (
                 <li key={location.slug}>
                   <Link
                     href={`/locations/${location.slug}`}
