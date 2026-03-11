@@ -10,18 +10,48 @@ type StatusState =
 
 export function EnquiryForm() {
   const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [postcode, setPostcode] = useState("");
   const [message, setMessage] = useState("");
+  const [honeypot, setHoneypot] = useState("");
   const [status, setStatus] = useState<StatusState>({ state: "idle" });
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    if (!name || !phone || !postcode || !message) {
+    if (honeypot) {
+      // Silently ignore obvious bot submissions.
+      setStatus({
+        state: "success",
+      });
+      return;
+    }
+
+    const trimmedName = name.trim();
+    const trimmedEmail = email.trim();
+    const trimmedPhone = phone.trim();
+    const trimmedPostcode = postcode.trim();
+    const trimmedMessage = message.trim();
+
+    if (
+      !trimmedName ||
+      !trimmedEmail ||
+      !trimmedPhone ||
+      !trimmedPostcode ||
+      !trimmedMessage
+    ) {
       setStatus({
         state: "error",
         message: "Please fill in all fields before sending your enquiry.",
+      });
+      return;
+    }
+
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(trimmedEmail)) {
+      setStatus({
+        state: "error",
+        message: "Please enter a valid email address.",
       });
       return;
     }
@@ -34,7 +64,13 @@ export function EnquiryForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ name, phone, postcode, message }),
+        body: JSON.stringify({
+          name: trimmedName,
+          email: trimmedEmail,
+          phone: trimmedPhone,
+          postcode: trimmedPostcode,
+          message: trimmedMessage,
+        }),
       });
 
       const data = (await response.json()) as { ok: boolean; error?: string };
@@ -45,9 +81,11 @@ export function EnquiryForm() {
 
       setStatus({ state: "success" });
       setName("");
+      setEmail("");
       setPhone("");
       setPostcode("");
       setMessage("");
+      setHoneypot("");
     } catch (error) {
       setStatus({
         state: "error",
@@ -67,6 +105,20 @@ export function EnquiryForm() {
       className="grid gap-3 sm:grid-cols-2"
       onSubmit={handleSubmit}
     >
+      {/* Honeypot field for bots */}
+      <div className="hidden">
+        <label>
+          Company
+          <input
+            type="text"
+            name="company"
+            autoComplete="off"
+            value={honeypot}
+            onChange={(event) => setHoneypot(event.target.value)}
+          />
+        </label>
+      </div>
+
       <div className="sm:col-span-1">
         <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-700">
           Name
@@ -77,6 +129,19 @@ export function EnquiryForm() {
           className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-sky-400"
           value={name}
           onChange={(event) => setName(event.target.value)}
+          required
+        />
+      </div>
+      <div className="sm:col-span-1">
+        <label className="mb-1 block text-xs font-semibold uppercase tracking-wide text-slate-700">
+          Email
+        </label>
+        <input
+          type="email"
+          placeholder="you@example.com"
+          className="w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder:text-slate-400 outline-none transition focus:border-sky-400"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
           required
         />
       </div>

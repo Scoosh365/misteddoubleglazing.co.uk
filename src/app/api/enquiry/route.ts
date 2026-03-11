@@ -28,14 +28,21 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const { name, phone, postcode, message } = body as {
+  const { name, email, phone, postcode, message, company } = body as {
     name?: string;
+    email?: string;
     phone?: string;
     postcode?: string;
     message?: string;
+    company?: string;
   };
 
-  if (!name || !phone || !postcode || !message) {
+  if (company) {
+    // Honeypot field was filled – likely a bot submission.
+    return NextResponse.json({ ok: true });
+  }
+
+  if (!name || !email || !phone || !postcode || !message) {
     return NextResponse.json(
       { ok: false, error: "Please fill in all fields." },
       { status: 400 },
@@ -58,6 +65,7 @@ export async function POST(req: NextRequest) {
     `New website enquiry:`,
     "",
     `Name: ${name}`,
+    `Email: ${email}`,
     `Phone: ${phone}`,
     `Postcode: ${postcode}`,
     "",
@@ -68,6 +76,7 @@ export async function POST(req: NextRequest) {
   const html = `
     <h2>New website enquiry</h2>
     <p><strong>Name:</strong> ${name}</p>
+    <p><strong>Email:</strong> ${email}</p>
     <p><strong>Phone:</strong> ${phone}</p>
     <p><strong>Postcode:</strong> ${postcode}</p>
     <p><strong>Message:</strong></p>
