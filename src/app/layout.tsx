@@ -35,11 +35,33 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const organizationSchema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "Misted Double Glazing",
+    url: "https://misteddoubleglazing.co.uk",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Alloa Business Centre, Whins Road",
+      addressLocality: "Alloa",
+      addressRegion: "Clackmannanshire",
+      postalCode: "FK10 3SA",
+      addressCountry: "GB",
+    },
+  };
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema),
+          }}
+        />
         {GA_MEASUREMENT_ID ? (
           <>
             <Script
@@ -60,6 +82,10 @@ export default function RootLayout({
         <footer className="border-t border-slate-200 bg-slate-50 px-4 py-4 text-center text-xs text-slate-500">
           <div className="flex flex-wrap items-center justify-center gap-4">
             <span>© {new Date().getFullYear()} misteddoubleglazing.co.uk</span>
+            <span>
+              Alloa Business Centre, Whins Road, Alloa, Clackmannanshire FK10
+              3SA
+            </span>
             <a href="/terms" className="text-sky-300 hover:text-sky-200">
               Terms &amp; conditions
             </a>

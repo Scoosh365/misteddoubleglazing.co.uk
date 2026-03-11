@@ -11,7 +11,10 @@ export type LocationSlug =
   | "falkirk"
   | "alloa"
   | "dunfermline"
-  | "perth";
+  | "perth"
+  | "aberdeen"
+  | "dundee"
+  | "liverpool";
 
 export interface Location {
   slug: LocationSlug;
@@ -296,6 +299,69 @@ export const locations: Location[] = [
     subAreas: ["City Centre", "Scone"],
     postcodeAreas: ["PH1", "PH2"],
     toneSnippet: "Ideal for Perthshire townhouses and newer family homes.",
+  },
+  {
+    slug: "aberdeen",
+    city: "Aberdeen",
+    region: "North East Scotland",
+    weatherContext:
+      "North Sea air, wind and driving rain can be especially hard on older seals.",
+    intro:
+      "From granite tenements to newer estates on the edge of the city, misted and blown units are a common issue around Aberdeen.",
+    neighbourhoodsBlurb:
+      "We regularly help homeowners in areas like Rosemount and Bridge of Don replace failed glass units while keeping existing frames wherever possible.",
+    faqs: [
+      {
+        question: "Can you work in upper-floor granite tenements?",
+        answer:
+          "Yes, we frequently work in traditional Aberdeen tenements. Let us know the floor level, stair access and parking so we can plan the visit safely.",
+      },
+    ],
+    subAreas: ["Rosemount", "Bridge of Don"],
+    postcodeAreas: ["AB10", "AB11", "AB22"],
+    toneSnippet: "Ideal for granite tenements and modern estates along the North Sea coast.",
+  },
+  {
+    slug: "dundee",
+    city: "Dundee",
+    region: "Tayside",
+    weatherContext:
+      "River Tay air and coastal winds can push moisture into tired double glazing.",
+    intro:
+      "Dundee’s mix of older tenements, townhouses and newer developments means failed and fogged units can crop up across the city.",
+    neighbourhoodsBlurb:
+      "We often visit areas like the West End and Broughty Ferry to replace misted panes, improve insulation and cut down on draughts.",
+    faqs: [
+      {
+        question: "Do you work in both central flats and coastal suburbs?",
+        answer:
+          "Yes, we cover central Dundee and surrounding suburbs such as Broughty Ferry, bringing replacement units to suit each property.",
+      },
+    ],
+    subAreas: ["West End", "Broughty Ferry"],
+    postcodeAreas: ["DD1", "DD2", "DD5"],
+    toneSnippet: "From student flats to family homes along the Tay.",
+  },
+  {
+    slug: "liverpool",
+    city: "Liverpool",
+    region: "Merseyside",
+    weatherContext:
+      "Coastal winds and city traffic can both highlight weak spots in older double glazing.",
+    intro:
+      "Across Liverpool’s terraces, semis and apartments, failed seals often show up as permanently fogged or streaked panes.",
+    neighbourhoodsBlurb:
+      "We regularly help households in areas like Anfield and Allerton replace misted units, improve warmth and reduce outside noise.",
+    faqs: [
+      {
+        question: "Can you repair windows in busy terraced streets?",
+        answer:
+          "Yes, we’re used to working in tighter Liverpool streets and terraces. Share parking and access details when you enquire so we can plan the visit.",
+      },
+    ],
+    subAreas: ["Anfield", "Allerton"],
+    postcodeAreas: ["L1", "L4", "L18"],
+    toneSnippet: "Perfect for Merseyside terraces, semis and city apartments.",
   },
 ];
 
