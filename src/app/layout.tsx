@@ -98,7 +98,7 @@ export default function RootLayout({
               Terms &amp; conditions
             </a>
             <a href="/site-map" className="text-sky-300 hover:text-sky-200">
-              HTML sitemap
+              Sitemap
             </a>
           </div>
         </footer>
