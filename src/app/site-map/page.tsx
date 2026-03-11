@@ -36,6 +36,11 @@ export default function HtmlSitemapPage() {
             </h2>
             <ul className="space-y-1 text-sm text-slate-700">
               <li>
+                <Link href="/faq" className="hover:text-sky-700">
+                  FAQs
+                </Link>
+              </li>
+              <li>
                 <Link href="/" className="hover:text-sky-700">
                   Home
                 </Link>
