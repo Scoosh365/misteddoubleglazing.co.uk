@@ -37,6 +37,14 @@ export default function HtmlSitemapPage() {
             <ul className="space-y-1 text-sm text-slate-700">
               <li>
                 <Link
+                  href="/window-repairs-near-me"
+                  className="hover:text-sky-700"
+                >
+                  Window repairs near me
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/why-does-double-glazing-mist-or-steam-up"
                   className="hover:text-sky-700"
                 >
