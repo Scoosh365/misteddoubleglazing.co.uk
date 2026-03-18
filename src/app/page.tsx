@@ -51,6 +51,10 @@ export default function Home() {
                 </div>
                 <div className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                  No salesman
+                </div>
+                <div className="flex items-center gap-2">
+                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                   Save vs full window replacement
                 </div>
               </div>
