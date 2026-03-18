@@ -15,7 +15,8 @@ export type LocationSlug =
   | "aberdeen"
   | "dundee"
   | "liverpool"
-  | "kilmarnock";
+  | "kilmarnock"
+  | "preston";
 
 export interface Location {
   slug: LocationSlug;
@@ -384,6 +385,28 @@ export const locations: Location[] = [
     subAreas: ["Bonnyton", "New Farm Loch"],
     postcodeAreas: ["KA1", "KA3"],
     toneSnippet: "Ideal for Kilmarnock tenements, terraces and newer family homes.",
+  },
+  {
+    slug: "preston",
+    city: "Preston",
+    region: "Lancashire",
+    weatherContext:
+      "North West rain and temperature swings can highlight weak seals and tired glazing over time.",
+    intro:
+      "Across Preston’s terraces, semis and newer developments, failed sealed units often show up as permanently fogged or misted panes.",
+    neighbourhoodsBlurb:
+      "We regularly help homeowners in areas like Fulwood and Ashton-on-Ribble replace failed glass units, reduce draughts and improve comfort without replacing whole frames.",
+    faqs: [
+      {
+        question: "Do you cover suburbs and nearby villages around Preston?",
+        answer:
+          "Yes. We cover Preston and surrounding PR postcodes. Share your postcode and any access notes in your enquiry so we can match you to a nearby technician.",
+      },
+    ],
+    subAreas: ["Fulwood", "Ashton-on-Ribble"],
+    postcodeAreas: ["PR1", "PR2"],
+    toneSnippet:
+      "Ideal for Preston terraces, semis and modern developments across Lancashire.",
   },
 ];
 
