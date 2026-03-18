@@ -214,7 +214,7 @@ export const locations: Location[] = [
           "In most cases, yes. We’ll measure each opening, discuss your existing glass and quote to replace just the failed units while keeping the look of the property.",
       },
     ],
-    subAreas: ["City Centre", "Bridge of Allan"],
+    subAreas: ["Bannockburn", "Bridge of Allan", "Cambusbarron", "City Centre", "Doune"],
     postcodeAreas: ["FK7", "FK8", "FK9"],
     toneSnippet: "Ideal for older stone homes and newer estates around the Ochils.",
   },
