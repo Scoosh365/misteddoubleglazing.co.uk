@@ -97,10 +97,10 @@ export default function RootLayout({
               <span className="hidden sm:inline">Call our team</span>
               <span className="inline sm:hidden">Call 07712 677 697</span>
             </a>
-            <a href="/terms" className="text-sky-300 hover:text-sky-200">
+            <a href="/terms" className="text-sky-700 hover:text-sky-800">
               Terms &amp; conditions
             </a>
-            <a href="/site-map" className="text-sky-300 hover:text-sky-200">
+            <a href="/site-map" className="text-sky-700 hover:text-sky-800">
               Sitemap
             </a>
           </div>

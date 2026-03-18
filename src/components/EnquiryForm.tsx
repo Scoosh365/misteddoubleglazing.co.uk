@@ -186,7 +186,7 @@ export function EnquiryForm() {
       </div>
       <button
         type="submit"
-        className="mt-1 inline-flex items-center justify-center rounded-full bg-sky-600 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-700 disabled:opacity-70 sm:col-span-2"
+        className="mt-1 inline-flex items-center justify-center rounded-full bg-sky-700 px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-sky-800 disabled:opacity-70 sm:col-span-2"
         disabled={isSubmitting}
       >
         {isSubmitting ? "Sending your enquiry..." : "Request my repair quote"}
