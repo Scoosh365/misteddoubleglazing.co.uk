@@ -67,14 +67,17 @@ export default function RootLayout({
           <>
             <Script
               src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-              strategy="afterInteractive"
+              strategy="lazyOnload"
             />
-            <Script id="ga4-init" strategy="afterInteractive">
+            <Script id="ga4-init" strategy="lazyOnload">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
                 gtag('config', '${GA_MEASUREMENT_ID}', { page_path: window.location.pathname });
+                // #region agent log
+                fetch('http://127.0.0.1:7827/ingest/eba06004-ae65-438c-b59c-40b7c9722fa8',{method:'POST',headers:{'Content-Type':'application/json','X-Debug-Session-Id':'8af5dc'},body:JSON.stringify({sessionId:'8af5dc',runId:'pre-fix',hypothesisId:'H1',location:'src/app/layout.tsx:ga4-init',message:'GA4 init executed',data:{measurementId:'${GA_MEASUREMENT_ID}',path:window.location.pathname,readyState:document.readyState},timestamp:Date.now()})}).catch(()=>{});
+                // #endregion
               `}
             </Script>
           </>
